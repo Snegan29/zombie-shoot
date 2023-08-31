@@ -59,7 +59,7 @@ function generateUniqueNums(min,max){
 
 // check if zombies missed and if we are losing lives.
 let lives = 4
-let time = 60
+let time = 30
 const widthOfLine = document.getElementById("max-lives")
 
 function missedZombies(zombie){
@@ -69,8 +69,10 @@ function missedZombies(zombie){
         maxlives.style.width = lives*25+"%";
         if(lives == 0){
             location.href="./game-over.html"
+        }else{
+            destroyZombie(zombie)
         }
-    destroyZombie(zombie)
+    
     }
 }
 missedZombies(zombie)
